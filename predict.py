@@ -43,12 +43,12 @@ def copy_files(src_folder, dest_folder):
             else:
                 # 处理文件名冲突，直接使用数字命名
                 file_counter = 1
-                new_dest_path = os.path.join(dest_folder, str(file_counter))
+                new_dest_path = os.path.join(dest_folder, str(file_counter)+"."+item.split(".")[-1])
 
                 # 检查文件名冲突
                 while os.path.exists(new_dest_path):
                     file_counter += 1
-                    new_dest_path = os.path.join(dest_folder, str(file_counter))
+                    new_dest_path = os.path.join(dest_folder, str(file_counter)+"."+item.split(".")[-1])
 
                 # 复制文件
                 shutil.copy2(src_path, new_dest_path)

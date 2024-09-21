@@ -213,9 +213,10 @@ class ComfyUI:
                 "请输入ComfyUI工作流的API JSON版本。（进入ComfyUI设置并打开“启用开发模式选项”，然后通过“保存(API格式)”按钮保存ComfyUI工作流）"
             )
 
+#取消模型检查
         self.handle_known_unsupported_nodes(wf)
         self.handle_inputs(wf)
-        self.handle_weights(wf)
+        # self.handle_weights(wf)
         return wf
 
     def reset_execution_cache(self):
