@@ -33,15 +33,15 @@ class ComfyUI:
         )
         server_thread.start()
         while not self.is_server_running():
-            if time.time() - start_time > 60:
-                raise TimeoutError("Server did not start within 60 seconds")
+            if time.time() - start_time > 360:
+                raise TimeoutError("ComfyUI未在360秒内启动")
             time.sleep(0.5)
 
         elapsed_time = time.time() - start_time
-        print(f"Server started in {elapsed_time:.2f} seconds")
+        print(f"ComfyUI启动共花费 {elapsed_time:.2f} 秒")
 
     def run_server(self, output_directory, input_directory):
-        command = f"python ./ComfyUI/main.py --output-directory {output_directory} --input-directory {input_directory} --disable-metadata"
+        command = f"python ComfyUI/main.py --output-directory {output_directory} --input-directory {input_directory} --listen"
         server_process = subprocess.Popen(command, shell=True)
         server_process.wait()
 
@@ -67,7 +67,7 @@ class ComfyUI:
         if weights_to_download is None:
             weights_to_download = []
 
-        print("Checking weights")
+        print("检查模型")
         embeddings = self.weights_downloader.get_weights_by_type("EMBEDDINGS")
         embedding_to_fullname = {emb.split(".")[0]: emb for emb in embeddings}
         weights_filetypes = self.weights_downloader.supported_filetypes
@@ -104,7 +104,7 @@ class ComfyUI:
             self.apply_helper_methods("check_for_unsupported_nodes", Node(node))
 
     def handle_inputs(self, workflow):
-        print("Checking inputs")
+        print("检查输入")
         seen_inputs = set()
         for node in workflow.values():
             if "inputs" in node:
@@ -116,7 +116,7 @@ class ComfyUI:
                                 self.input_directory, os.path.basename(input_value)
                             )
                             if not os.path.exists(filename):
-                                print(f"Downloading {input_value} to {filename}")
+                                print(f"下载 {input_value} 到 {filename}")
                                 try:
                                     response = requests.get(input_value)
                                     response.raise_for_status()
@@ -124,7 +124,7 @@ class ComfyUI:
                                         file.write(response.content)
                                     print(f"✅ {filename}")
                                 except requests.exceptions.RequestException as e:
-                                    print(f"❌ Error downloading {input_value}: {e}")
+                                    print(f"❌ 无法下载 {input_value}: {e}")
 
                             # The same URL may be included in a workflow more than once
                             node["inputs"][input_key] = filename
@@ -134,7 +134,7 @@ class ComfyUI:
                                 self.input_directory, os.path.basename(input_value)
                             )
                             if not os.path.exists(filename):
-                                print(f"❌ {filename} not provided")
+                                print(f"❌ {filename} 未被提供")
                             else:
                                 print(f"✅ {filename}")
 
@@ -154,7 +154,7 @@ class ComfyUI:
         )
         with urllib.request.urlopen(req) as response:
             if response.status != 200:
-                print(f"Failed: {endpoint}, status code: {response.status}")
+                print(f"失败: {endpoint}, 状态码: {response.status}")
 
     # https://github.com/comfyanonymous/ComfyUI/blob/master/server.py
     def clear_queue(self):
@@ -178,7 +178,7 @@ class ComfyUI:
 
         if http_error:
             raise Exception(
-                "ComfyUI Error – Your workflow could not be run. This usually happens if you’re trying to use an unsupported node. Check the logs for 'KeyError: ' details, and go to https://github.com/fofr/cog-comfyui to see the list of supported custom nodes."
+                "ComfyUI执行失败！可能原因：1、使用了不支持的节点；2、使用了不存在的模型；3、输入图片名称错误。"
             )
 
     def wait_for_prompt_completion(self, workflow, prompt_id):
@@ -186,13 +186,6 @@ class ComfyUI:
             out = self.ws.recv()
             if isinstance(out, str):
                 message = json.loads(out)
-
-                if message["type"] == "execution_error":
-                    error_message = json.dumps(message, indent=2)
-                    raise Exception(
-                        f"There was an error executing your workflow:\n\n{error_message}"
-                    )
-
                 if message["type"] == "executing":
                     data = message["data"]
                     if data["node"] is None and data["prompt_id"] == prompt_id:
@@ -202,7 +195,7 @@ class ComfyUI:
                         meta = node.get("_meta", {})
                         class_type = node.get("class_type", "Unknown")
                         print(
-                            f"Executing node {data['node']}, title: {meta.get('title', 'Unknown')}, class type: {class_type}"
+                            f"执行节点 {data['node']}, 标题: {meta.get('title', 'Unknown')}, 类型: {class_type}"
                         )
             else:
                 continue
@@ -217,7 +210,7 @@ class ComfyUI:
         # We need the API version
         if any(key in wf.keys() for key in ["last_node_id", "last_link_id", "version"]):
             raise ValueError(
-                "You need to use the API JSON version of a ComfyUI workflow. To do this go to your ComfyUI settings and turn on 'Enable Dev mode Options'. Then you can save your ComfyUI workflow via the 'Save (API Format)' button."
+                "请输入ComfyUI工作流的API JSON版本。（进入ComfyUI设置并打开“启用开发模式选项”，然后通过“保存(API格式)”按钮保存ComfyUI工作流）"
             )
 
         self.handle_known_unsupported_nodes(wf)
@@ -245,11 +238,11 @@ class ComfyUI:
                 self.randomise_input_seed(seed_key, inputs)
 
     def run_workflow(self, workflow):
-        print("Running workflow")
+        print("执行工作流中.....")
         prompt_id = self.queue_prompt(workflow)
         self.wait_for_prompt_completion(workflow, prompt_id)
         output_json = self.get_history(prompt_id)
-        print("outputs: ", output_json)
+        print("输出: ", output_json)
         print("====================================")
 
     def get_history(self, prompt_id):
