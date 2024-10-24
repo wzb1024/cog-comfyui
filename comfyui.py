@@ -41,9 +41,7 @@ class ComfyUI:
         print(f"Server started in {elapsed_time:.2f} seconds")
 
     def run_server(self, output_directory, input_directory):
-        command = f"python ./ComfyUI/main.py --output-directory {output_directory} --input-directory {input_directory} --disable-metadata"
-
-        """
+        command = f"/src/venv/bin/python ComfyUI/main.py --output-directory {output_directory} --input-directory {input_directory} --listen 0.0.0.0 --disable-metadata --highvram"        """
         We need to capture the stdout and stderr from the server process
         so that we can print the logs to the console. If we don't do this
         then at the point where ComfyUI attempts to print it will throw a
