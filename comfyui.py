@@ -41,9 +41,31 @@ class ComfyUI:
         print(f"ComfyUI启动共花费 {elapsed_time:.2f} 秒")
 
     def run_server(self, output_directory, input_directory):
-        command = f"python ComfyUI/main.py --output-directory {output_directory} --input-directory {input_directory} --listen"
-        server_process = subprocess.Popen(command, shell=True)
-        server_process.wait()
+        command = f"python ./ComfyUI/main.py --output-directory {output_directory} --input-directory {input_directory} --disable-metadata"
+
+        """
+        We need to capture the stdout and stderr from the server process
+        so that we can print the logs to the console. If we don't do this
+        then at the point where ComfyUI attempts to print it will throw a
+        broken pipe error. This only happens from cog v0.9.13 onwards.
+        """
+        server_process = subprocess.Popen(
+            command,
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            universal_newlines=True,
+        )
+
+        def print_stdout():
+            for stdout_line in iter(server_process.stdout.readline, ""):
+                print(f"[ComfyUI] {stdout_line.strip()}")
+
+        stdout_thread = threading.Thread(target=print_stdout)
+        stdout_thread.start()
+
+        for stderr_line in iter(server_process.stderr.readline, ""):
+            print(f"[ComfyUI] {stderr_line.strip()}")
 
     def is_server_running(self):
         try:
@@ -181,11 +203,46 @@ class ComfyUI:
                 "ComfyUI执行失败！可能原因：1、使用了不支持的节点；2、使用了不存在的模型；3、输入图片名称错误。"
             )
 
+    def _delete_corrupted_weights(self, error_data):
+        if "current_inputs" in error_data:
+            weights_to_delete = []
+            weights_filetypes = self.weights_downloader.supported_filetypes
+
+            for input_list in error_data["current_inputs"].values():
+                for input_value in input_list:
+                    if isinstance(input_value, str) and any(
+                        input_value.endswith(ft) for ft in weights_filetypes
+                    ):
+                        weights_to_delete.append(input_value)
+
+            for weight_file in list(set(weights_to_delete)):
+                self.weights_downloader.delete_weights(weight_file)
+
+            raise Exception(
+                "The weights for this workflow have been corrupted. They have been deleted and will be re-downloaded on the next run. Please try again."
+            )
+
     def wait_for_prompt_completion(self, workflow, prompt_id):
         while True:
             out = self.ws.recv()
             if isinstance(out, str):
                 message = json.loads(out)
+
+                if message["type"] == "execution_error":
+                    error_data = message["data"]
+
+                    if (
+                        "exception_type" in error_data
+                        and error_data["exception_type"]
+                        == "safetensors_rust.SafetensorError"
+                    ):
+                        self._delete_corrupted_weights(error_data)
+
+                    error_message = json.dumps(message, indent=2)
+                    raise Exception(
+                        f"There was an error executing your workflow:\n\n{error_message}"
+                    )
+
                 if message["type"] == "executing":
                     data = message["data"]
                     if data["node"] is None and data["prompt_id"] == prompt_id:

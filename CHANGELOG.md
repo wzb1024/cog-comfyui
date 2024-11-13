@@ -1,3 +1,160 @@
+## 2024-11-12
+
+- Move CLIP to text_encoders
+- [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/2865f913f754710922370fc1f332ef1bf53baab4...a72d152b0c8788b954004ee8c01e957701514e32)
+- [Updated ComfyUI-BrushNet](https://github.com/nullquant/ComfyUI-BrushNet/compare/4f1992e...e237b6e)
+- [Updated comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes/compare/e2bd09d...517790d)
+- [Updated Derfuu_ComfyUI_ModdedNodes](https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes/compare/5c93bd1...d0905be)
+- [Updated ComfyUI-Logic](https://github.com/theUpsider/ComfyUI-Logic/compare/fb88973...42d4f3d)
+
+New weights:
+- [Add mochi_preview_fp8_scaled.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/mochi_preview_repackaged)
+- [Add mochi_preview_bf16.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/mochi_preview_repackaged)
+- [Add mochi_vae.safetensors to vae](https://huggingface.co/Comfy-Org/mochi_preview_repackaged)
+
+## 2024-11-09
+
+- [Updated x-flux-comfyui](https://github.com/XLabs-AI/x-flux-comfyui/compare/45c8347...0032855)
+- [Updated comfyui-inpaint-nodes](https://github.com/Acly/comfyui-inpaint-nodes/compare/6fcdf55...422eccd)
+- [Updated rgthree-comfy](https://github.com/rgthree/rgthree-comfy/compare/6f82a5c...8df5e33)
+- [Updated ComfyUI-IC-Light](https://github.com/kijai/ComfyUI-IC-Light/compare/8a9f9c9...7def1cf)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/1ec5810...5f032e3)
+- [Updated was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui/compare/df5133b...fe7e088)
+- [Updated ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts/compare/626e001...d6657cc)
+- [Updated ComfyUI_essentials](https://github.com/cubiq/ComfyUI_essentials/compare/5b75a0e...64e38fd)
+- [Updated ComfyUI_tinyterraNodes](https://github.com/TinyTerra/ComfyUI_tinyterraNodes/compare/13d0d70...0387940)
+- [Updated ComfyUI_FizzNodes](https://github.com/FizzleDorf/ComfyUI_FizzNodes/compare/f2a63df...7d6ea60)
+- [Updated ComfyUI-Advanced-ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/compare/74d0c56...172543b)
+- [Updated ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/0376e57...d1d59ba)
+- [Updated ComfyUI-AnimateDiff-Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/compare/261fac8...b3e508a)
+- [Updated comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes/compare/63ab338...e2bd09d)
+- [Updated ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/compare/bfaaa6c...c6d53ec)
+- [Updated comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux/compare/7e40019...5a049bd)
+
+## 2024-11-07
+
+- [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/915fdb57454c094391d830cefb4ffdd24ed8088c...2865f913f754710922370fc1f332ef1bf53baab4) including genmo mochi support
+
+New custom nodes:
+
+- [Add ComfyUI-Fluxtapoz](https://github.com/logtd/ComfyUI-Fluxtapoz)
+
+New weights:
+
+- [Add AAM_XL_Anime_Mix.safetensors to checkpoints](https://huggingface.co/Lykon/AAM_XL_AnimeMix)
+- [Add realvisxlV50_v50LightningBakedvae.safetensors to checkpoints](https://civitai.com/models/139562/realvisxl-v50)
+
+## 2024-11-05
+
+- [Add Hyper-SD3-8steps-CFG-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD/)
+- [Add Hyper-SD3-4steps-CFG-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD/)
+- [Add Hyper-SD3-16steps-CFG-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD/)
+- [Add Hyper-SD15-12steps-CFG-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD/)
+- [Add Hyper-SDXL-12steps-CFG-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD/)
+
+## 2024-10-23
+
+New weights:
+
+- [Add mochi_preview_vae_bf16.safetensors to vae/mochi](https://huggingface.co/Kijai/Mochi_preview_comfy)
+- [Add mochi_preview_dit_fp8_e4m3fn.safetensors to diffusion_models/mochi](https://huggingface.co/Kijai/Mochi_preview_comfy)
+- [Add OpenFlux-fp8_e4m3fn.safetensors to checkpoints](https://huggingface.co/Kijai/OpenFLUX-comfy)
+
+New SD3.5L weights:
+
+- [Add t5xxl_fp8_e4m3fn_scaled.safetensors to clip](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8)
+- [Add sd3.5_large_fp8_scaled.safetensors to checkpoints](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8)
+- Add sd3.5_large.safetensors to checkpoints
+- Add sd3.5_large_turbo.safetensors to checkpoints
+
+- [Upgrade ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/3a0eeee32053f6c45c5ad4b3975f4ee229b01fbb...915fdb57454c094391d830cefb4ffdd24ed8088c)
+
+Update custom nodes:
+
+- [Updated x-flux-comfyui](https://github.com/XLabs-AI/x-flux-comfyui/compare/c4af981...45c8347)
+- [Updated comfyui-inpaint-nodes](https://github.com/Acly/comfyui-inpaint-nodes/compare/d3655fc...6fcdf55)
+- [Updated ComfyUI-Kolors-MZ](https://github.com/MinusZoneAI/ComfyUI-Kolors-MZ/compare/8688054...e02e185)
+- [Updated rgthree-comfy](https://github.com/rgthree/rgthree-comfy/compare/083ad2a...6f82a5c)
+- [Updated comfyui_jankhidiffusion](https://github.com/blepping/comfyui_jankhidiffusion/compare/86afeb7...4e66c60)
+- [Updated PuLID_ComfyUI](https://github.com/cubiq/PuLID_ComfyUI/compare/13954de...4e1fd40)
+- [Updated ComfyUI-Frame-Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation/compare/483dfe6...c336f71)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/13242fc...1ec5810)
+- [Updated was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui/compare/bb34bd4...df5133b)
+- [Updated ComfyUI_InstantID](https://github.com/cubiq/ComfyUI_InstantID/compare/579bdf6...1ef34ef)
+- [Updated ComfyUI-PhotoMaker-Plus](https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus/compare/024da47...604feb3)
+- [Updated ComfyUI_essentials](https://github.com/cubiq/ComfyUI_essentials/compare/ef70435...5b75a0e)
+- [Updated ComfyUI_UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale/compare/70083f5...e617ff2)
+- [Updated ComfyUI_tinyterraNodes](https://github.com/TinyTerra/ComfyUI_tinyterraNodes/compare/52711d5...13d0d70)
+- [Updated ComfyUI_FizzNodes](https://github.com/FizzleDorf/ComfyUI_FizzNodes/compare/974b41c...f2a63df)
+- [Updated comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes/compare/1a24975...63ab338)
+- [Updated ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/compare/c0d54d8...bfaaa6c)
+- [Updated comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux/compare/302a389...7e40019)
+
+## 2024-10-22
+
+- [Add sd3_medium_vae.fp16.safetensors to vae](https://huggingface.co/stabilityai/stable-diffusion-3-medium-diffusers)
+
+## 2024-10-11
+
+- Add flux1-schnell_DYN_H100-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine to tensorrt
+- Add flux1-dev_DYN_H100-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine to tensorrt
+- Add flux1-dev_DYN_A100-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine to tensorrt
+
+## 2024-10-08
+
+Add models for [krita-ai-diffusion](https://github.com/Acly/krita-ai-diffusion):
+
+- [Add Hyper-SDXL-8steps-CFG-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD/blob/main/Hyper-SDXL-8steps-CFG-lora.safetensors)
+- [Add Hyper-SD15-8steps-CFG-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD/blob/main/Hyper-SD15-8steps-CFG-lora.safetensors)
+- [Add OmniSR_X4_DIV2K.safetensors to upscale_models](https://huggingface.co/Acly/Omni-SR/blob/main/OmniSR_X4_DIV2K.safetensors)
+- [Add OmniSR_X3_DIV2K.safetensors to upscale_models](https://huggingface.co/Acly/Omni-SR/blob/main/OmniSR_X3_DIV2K.safetensors)
+- [Add OmniSR_X2_DIV2K.safetensors to upscale_models](https://huggingface.co/Acly/Omni-SR/blob/main/OmniSR_X2_DIV2K.safetensors)
+- [Add 4x_NMKD-Superscale-SP_178000_G.pth to upscale_models](https://huggingface.co/gemasai/4x_NMKD-Superscale-SP_178000_G/blob/main/4x_NMKD-Superscale-SP_178000_G.pth)
+- [Add sd1.5/model.safetensors to clip_vision](https://huggingface.co/h94/IP-Adapter/blob/main/models/image_encoder/model.safetensors)
+- [Add realisticVisionV51_v51VAE.safetensors to checkpoints](https://huggingface.co/lllyasviel/fav_models/blob/main/fav/realisticVisionV51_v51VAE.safetensors)
+- [Add juggernautXL_version6Rundiffusion.safetensors to checkpoints](https://huggingface.co/lllyasviel/fav_models/blob/main/fav/juggernautXL_version6Rundiffusion.safetensors)
+- [Add zavychromaxl_v80.safetensors to checkpoints](https://huggingface.co/misri/zavychromaxl_v80/blob/main/zavychromaxl_v80.safetensors)
+
+Add checkpoints:
+
+- [Add flux1-schnell-fp8.safetensors to checkpoints](https://huggingface.co/Comfy-Org/flux1-schnell)
+- [Add flux1-dev-fp8.safetensors to checkpoints](https://huggingface.co/Comfy-Org/flux1-dev)
+- [Add artUniverse_sdxlV50.safetensors to checkpoints](https://civitai.com/models/123313/art-universe)
+
+## 2024-09-24
+
+- Add face_yolov8n.pt to ultralytics
+
+## 2024-09-23
+
+- [Fix broken pipe error](https://github.com/fofr/cog-comfyui/pull/172) causing ComfyUI workflows to stop when using cog v0.9.13 and later
+- [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/b33cd61..3a0eeee)
+- [Add ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors to clip](https://huggingface.co/zer0int/CLIP-GmP-ViT-L-14/blob/main/ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors) for improved long text in flux
+- [Add epicrealism_pureEvolutionV5-inpainting.safetensors to checkpoints](https://civitai.com/api/download/models/134361?type=Model&format=SafeTensor&size=pruned&fp=fp16)
+
+Update custom nodes:
+
+- [Updated x-flux-comfyui](https://github.com/XLabs-AI/x-flux-comfyui/compare/f1610b2...c4af981)
+- [Updated ComfyUI-BrushNet](https://github.com/nullquant/ComfyUI-BrushNet/compare/a510eff...4f1992e)
+- [Updated comfyui-inpaint-nodes](https://github.com/Acly/comfyui-inpaint-nodes/compare/6ce66ff...d3655fc)
+- [Updated ComfyMath](https://github.com/evanspearman/ComfyMath/compare/be9beab...939bb81)
+- [Updated rgthree-comfy](https://github.com/rgthree/rgthree-comfy/compare/cae8e2a...083ad2a)
+- [Updated ComfyUI-IC-Light](https://github.com/kijai/ComfyUI-IC-Light/compare/a936586...8a9f9c9)
+- [Updated PuLID_ComfyUI](https://github.com/cubiq/PuLID_ComfyUI/compare/158d6bc...13954de)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/47a6da5...13242fc)
+- [Updated was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui/compare/fdb0f52...bb34bd4)
+- [Updated ComfyUI_InstantID](https://github.com/cubiq/ComfyUI_InstantID/compare/6d95aa6...579bdf6)
+- [Updated comfyui-reactor-node](https://github.com/Gourieff/comfyui-reactor-node/compare/2832357...89dba21)
+- [Updated ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts/compare/013894f...626e001)
+- [Updated ComfyUI-PhotoMaker-Plus](https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus/compare/10c453a...024da47)
+- [Updated ComfyUI-Advanced-ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/compare/949843e...74d0c56)
+- [Updated ComfyUI-AnimateDiff-Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/compare/34b7c52...261fac8)
+- [Updated comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes/compare/e0d0c3c...1a24975)
+- [Updated ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/compare/9b2d22a...c0d54d8)
+- [Updated comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux/compare/6c563c5...302a389)
+- [Updated ComfyUI_IPAdapter_plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/compare/88a7140...b188a6c)
+- [Removed deprecated ComfyUI-eesahesNodes](https://github.com/EeroHeikkinen/ComfyUI-eesahesNodes)
+
 ## 2024-09-02
 
 - [Add MistoLine Flux ControlNet custom nodes](https://github.com/TheMistoAI/MistoControlNet-Flux-dev)

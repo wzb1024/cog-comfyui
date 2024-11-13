@@ -188,6 +188,8 @@ def download_file(url, filename=None, civitai_api_token=None, hf_cli_download=Fa
 
 
 def tar_file(filename):
+    if filename is None:
+        raise ValueError("Filename cannot be None")
     tar_filename = filename + ".tar"
     subprocess.run(["tar", "-cvf", tar_filename, filename])
     print(f"Tarred {filename} to {tar_filename}")
@@ -229,6 +231,7 @@ def get_subfolder():
     subfolders = [
         "checkpoints",
         "upscale_models",
+        "clip",
         "clip_vision",
         "loras",
         "loras/b_lora",
@@ -352,6 +355,8 @@ def process_file(
         print(f"Processing {url}")
         local_file = download_file(url, filename, civitai_api_token, hf_cli_download)
     else:
+        if filename is None:
+            raise ValueError("Filename must be provided if URL is not specified")
         print(f"Processing {filename}")
         local_file = filename
 
@@ -440,7 +445,7 @@ def main():
             )
         elif os.path.isfile(args.file):
             process_file(
-                filename=filename,
+                filename=args.file,
                 subfolder=subfolder,
                 no_hf_upload=args.no_hf_upload,
                 civitai_api_token=civitai_api_token,

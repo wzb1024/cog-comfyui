@@ -1,11 +1,13 @@
 ## Checkpoints
 
 - 512-inpainting-ema.safetensors
+- AAM_XL_Anime_Mix.safetensors
 - absolutereality_v181.safetensors
 - albedobaseXL_v13.safetensors
 - albedobaseXL_v21.safetensors
 - animagine-xl-3.0.safetensors
 - anything-v3-fp16-pruned.safetensors
+- artUniverse_sdxlV50.safetensors
 - aura_flow_0.1.safetensors
 - aura_flow_0.2.safetensors
 - aura_flow_0.3.safetensors
@@ -29,9 +31,12 @@
 - dreamshaperXL_lightningDPMSDE.safetensors
 - dynavision_v20Bakedvae.safetensors
 - epicrealism_naturalSinRC1VAE.safetensors
+- epicrealism_pureEvolutionV5-inpainting.safetensors
 - Epicrealismxl_Hades.safetensors
 - epicrealismXL_v10.safetensors
 - epicrealismXL_v7FinalDestination.safetensors
+- flux1-dev-fp8.safetensors
+- flux1-schnell-fp8.safetensors
 - Hyper-SDXL-1step-Unet-Comfyui.fp16.safetensors
 - Hyper-SDXL-1step-Unet.safetensors
 - imp_v10.safetensors
@@ -42,6 +47,7 @@
 - juggernautXL_juggernautX.safetensors
 - juggernautXL_v8Rundiffusion.safetensors
 - juggernautXL_v9Rdphoto2Lightning.safetensors
+- juggernautXL_version6Rundiffusion.safetensors
 - juggerxlInpaint_juggerInpaintV8.safetensors
 - LCM_Dreamshaper_v7_4k.safetensors
 - leosamsHelloworldXL_helloworldXL60.safetensors
@@ -49,6 +55,7 @@
 - majicmixRealistic_v7.safetensors
 - motionctrl.pth
 - motionctrl_svd.ckpt
+- OpenFlux-fp8_e4m3fn.safetensors
 - photonLCM_v10.safetensors
 - PixArt-Sigma-XL-2-1024-MS.pth
 - pixlAnimeCartoonComic_v10.safetensors
@@ -75,13 +82,18 @@
 - Realistic_Vision_V6.0_NV_B1_inpainting.safetensors
 - Realistic_Vision_V6.0_NV_B1_inpainting_fp16.safetensors
 - realisticLCMBYStable_v10.safetensors
+- realisticVisionV51_v51VAE.safetensors
 - realisticVisionV60B1_v51HyperVAE.safetensors
 - RealVisXL_V2.0.safetensors
 - RealVisXL_V3.0.safetensors
 - RealVisXL_V3.0_Turbo.safetensors
 - RealVisXL_V4.0.safetensors
 - RealVisXL_V4.0_Lightning.safetensors
+- realvisxlV50_v50LightningBakedvae.safetensors
 - rundiffusionXL_beta.safetensors
+- sd3.5_large.safetensors
+- sd3.5_large_fp8_scaled.safetensors
+- sd3.5_large_turbo.safetensors
 - sd3_medium.safetensors
 - sd3_medium_incl_clips.safetensors
 - sd3_medium_incl_clips_t5xxlfp16.safetensors
@@ -121,6 +133,7 @@
 - v2-1_768-nonema-pruned.safetensors
 - wd-illusion-fp16.safetensors
 - x4-upscaler-ema.safetensors
+- zavychromaxl_v80.safetensors
 
 ## Upscale models
 
@@ -130,15 +143,19 @@
 - 4x-UltraSharp.pth
 - 4x_foolhardy_Remacri.pth
 - 4x_NMKD-Siax_200k.pth
+- 4x_NMKD-Superscale-SP_178000_G.pth
 - 8x_NMKD-Superscale_150000_G.pth
 - ESRGAN_4x.pth
+- OmniSR_X2_DIV2K.safetensors
+- OmniSR_X3_DIV2K.safetensors
+- OmniSR_X4_DIV2K.safetensors
 - RealESRGAN_x2.pth
 - RealESRGAN_x4.pth
 - RealESRGAN_x4plus.pth
 - RealESRGAN_x4plus_anime_6B.pth
 - RealESRGAN_x8.pth
 
-## CLIP
+## Text Encoders
 
 - clip_g.safetensors
 - clip_l.safetensors
@@ -149,6 +166,8 @@
 - stable-diffusion-2-1-clip.safetensors
 - t5xxl_fp16.safetensors
 - t5xxl_fp8_e4m3fn.safetensors
+- t5xxl_fp8_e4m3fn_scaled.safetensors
+- ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors
 
 ## CLIP Vision
 
@@ -161,6 +180,7 @@
 - IPAdapter_image_encoder_sd15.safetensors
 - model.15.safetensors
 - model.sdxl.safetensors
+- SD1.5/model.safetensors
 
 ## LORAs
 
@@ -240,19 +260,27 @@
 - hd_helper_v1.safetensors
 - Hyper-FLUX.1-dev-16steps-lora.safetensors
 - Hyper-FLUX.1-dev-8steps-lora.safetensors
+- Hyper-SD15-12steps-CFG-lora.safetensors
 - Hyper-SD15-1step-lora.safetensors
 - Hyper-SD15-2steps-lora.safetensors
 - Hyper-SD15-4steps-lora.safetensors
+- Hyper-SD15-8steps-CFG-lora.safetensors
 - Hyper-SD15-8steps-lora.safetensors
+- Hyper-SD3-16steps-CFG-lora.safetensors
+- Hyper-SD3-4steps-CFG-lora.safetensors
+- Hyper-SD3-8steps-CFG-lora.safetensors
+- Hyper-SDXL-12steps-CFG-lora.safetensors
 - Hyper-SDXL-1step-lora.safetensors
 - Hyper-SDXL-2steps-lora.safetensors
 - Hyper-SDXL-4steps-lora.safetensors
+- Hyper-SDXL-8steps-CFG-lora.safetensors
 - Hyper-SDXL-8steps-lora.safetensors
 - ip-adapter-faceid-plus_sd15_lora.safetensors
 - ip-adapter-faceid-plusv2_sd15_lora.safetensors
 - ip-adapter-faceid-plusv2_sdxl_lora.safetensors
 - ip-adapter-faceid_sd15_lora.safetensors
 - ip-adapter-faceid_sdxl_lora.safetensors
+- joel-illustrations-05-09-onblack.safetensors
 - lcm-lora-sdv1-5.safetensors
 - lcm-lora-ssd-1b.safetensors
 - lcm_lora_sdxl.safetensors
@@ -281,6 +309,7 @@
 - epiCNegative.pt
 - epiCRealism.pt
 - FastNegativeV2.pt
+- joel-illustrations-05-09-onblack_emb.safetensors
 - JuggernautNegative-neg.pt
 - negative_hand-neg.pt
 - ng_deepnegative_v1_75t.pt
@@ -463,6 +492,9 @@
 ## VAE
 
 - ae.safetensors
+- mochi/mochi_preview_vae_bf16.safetensors
+- mochi_vae.safetensors
+- sd3_medium_vae.fp16.safetensors
 - sdxl_vae.safetensors
 - stable-cascade/effnet_encoder.safetensors
 - stable-cascade/stage_a.safetensors
@@ -470,7 +502,9 @@
 
 ## Diffusion models (formerly Unets)
 
-- flux1-dev-fp8.safetensors
+- mochi/mochi_preview_dit_fp8_e4m3fn.safetensors
+- mochi_preview_bf16.safetensors
+- mochi_preview_fp8_scaled.safetensors
 - flux1-dev.safetensors
 - flux1-schnell.safetensors
 - iclight_sd15_fbc.safetensors
@@ -524,6 +558,7 @@
 - bbox/face_yolov8s.pt
 - bbox/hand_yolov8n.pt
 - bbox/hand_yolov8s.pt
+- face_yolov8n.pt
 - segm/deepfashion2_yolov8s-seg.pt
 - segm/face_yolov8m-seg_60.pt
 - segm/face_yolov8n-seg2_60.pt
@@ -773,6 +808,9 @@
 ## TensorRT Engines
 
 - dreamshaperXL_lightningDPMSDE_DYN_A40-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine
+- flux1-dev_DYN_A100-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine
+- flux1-dev_DYN_H100-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine
+- flux1-schnell_DYN_H100-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine
 - sd3_medium_DYN_A100-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine
 - sd3_medium_DYN_A40-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine
 - sd3_medium_DYN_H100-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine
@@ -792,7 +830,7 @@
 - rvm_resnet50_fp32.torchscript
 - briaai_rmbg_v1.4.pth
 
-## Misto ControlNet Flux
+## MistoLine Flux ControlNet
 
 - mistoline_flux.dev_v1.safetensors
 
